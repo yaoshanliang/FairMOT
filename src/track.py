@@ -117,7 +117,7 @@ def eval_seq(opt, dataloader, data_type, result_filename, save_dir=None, show_im
     return frame_id, timer.average_time, timer.calls
 
 
-def main(opt, data_root='/data/MOT16/train', det_root=None, seqs=('MOT16-05',), exp_name='demo',
+def main(opt, data_root, det_root=None, seqs=('17',), exp_name='demo',
          save_images=False, save_videos=False, show_image=True):
     logger.setLevel(logging.INFO)
     result_root = os.path.join(data_root, '..', 'results', exp_name)
@@ -133,6 +133,7 @@ def main(opt, data_root='/data/MOT16/train', det_root=None, seqs=('MOT16-05',), 
         logger.info('start seq: {}'.format(seq))
         dataloader = datasets.LoadImages(osp.join(data_root, seq, 'img1'), opt.img_size)
         result_filename = os.path.join(result_root, '{}.txt'.format(seq))
+        print(os.path.join(data_root, seq, 'seqinfo.ini'))
         meta_info = open(os.path.join(data_root, seq, 'seqinfo.ini')).read()
         frame_rate = int(meta_info[meta_info.find('frameRate') + 10:meta_info.find('\nseqLength')])
         nf, ta, tc = eval_seq(opt, dataloader, data_type, result_filename,
@@ -253,6 +254,7 @@ if __name__ == '__main__':
                       MOT20-05
                       '''
         data_root = os.path.join(opt.data_dir, 'MOT20/images/train')
+
     if opt.test_mot20:
         seqs_str = '''MOT20-04
                       MOT20-06
@@ -260,12 +262,21 @@ if __name__ == '__main__':
                       MOT20-08
                       '''
         data_root = os.path.join(opt.data_dir, 'MOT20/images/test')
+
     seqs = [seq.strip() for seq in seqs_str.split()]
+
+    if opt.val_waterscenestracking:
+        data_root = os.path.join(opt.data_dir, 'waterscenestracking/images/val')
+        seqs = os.listdir(data_root)
+
+    if opt.test_waterscenestracking:
+        data_root = os.path.join(opt.data_dir, 'waterscenestracking/images/test')
+        seqs = os.listdir(data_root)
 
     main(opt,
          data_root=data_root,
          seqs=seqs,
-         exp_name='MOT17_test_public_dla34',
+         exp_name='waterscenestracking_test_public_dla34',
          show_image=False,
          save_images=False,
          save_videos=False)

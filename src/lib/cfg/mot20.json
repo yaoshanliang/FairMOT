@@ -1,15 +1,15 @@
 {
-    "root":"/home/zyf/dataset",
+    "root":"/data/tracking/FairMOT",
     "train":
     {
-        "mot20":"./data/mot20.train"
+        "mot20":"/data/tracking/FairMOT/MOT20/mot20.train"
     },
     "test_emb":
     {
-        "mot20":"./data/mot20.train"
+        "mot20":"/data/tracking/FairMOT/MOT20/mot20.test"
     },
     "test":
     {
-        "mot20":"./data/mot20.train"
+        "mot20":"/data/tracking/FairMOT/MOT20/mot20.test"
     }
 }
