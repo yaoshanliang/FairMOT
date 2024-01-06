@@ -2,7 +2,7 @@
     "root":"/data/tracking/FairMOT",
     "train":
     {
-        "mot20":"/data/tracking/FairMOT/watersenestracking/train.txt"
+        "mot20":"/data/tracking/FairMOT/waterscenestracking/train.txt"
     },
     "test_emb":
     {
