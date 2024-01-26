@@ -1,0 +1,15 @@
+{
+    "root":"/home/shanliang/workspace/dataset/tracking/FairMOT",
+    "train":
+    {
+        "mot20":"/home/shanliang/workspace/dataset/tracking/FairMOT/watersenestracking/train.txt"
+    },
+    "test_emb":
+    {
+        "mot20":"/home/shanliang/workspace/dataset/tracking/FairMOT/waterscenestracking/test.txt"
+    },
+    "test":
+    {
+        "mot20":"/home/shanliang/workspace/dataset/tracking/FairMOT/waterscenestracking/test.txt"
+    }
+}
