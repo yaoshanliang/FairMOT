@@ -1,0 +1,15 @@
+{
+    "root":"/gpfs/work/cpt/shanliangyao19/dataset/USVTrack/FairMOT",
+    "train":
+    {
+        "mot20":"/gpfs/work/cpt/shanliangyao19/dataset/USVTrack/FairMOT/train.txt"
+    },
+    "test_emb":
+    {
+        "mot20":"/gpfs/work/cpt/shanliangyao19/dataset/USVTrack/FairMOT/test.txt"
+    },
+    "test":
+    {
+        "mot20":"/gpfs/work/cpt/shanliangyao19/dataset/USVTrack/FairMOT/test.txt"
+    }
+}
