@@ -40,11 +40,11 @@ There has been remarkable progress on object detection and re-identification in 
 
 ## Installation
 * Clone this repo, and we'll call the directory that you cloned as ${FAIRMOT_ROOT}
-* Install dependencies. We use python 3.8 and pytorch >= 1.7.0
+* Install dependencies. We use python 3.8 and pytorch >= 1.7.0, cuda11.8
 ```
-conda create -n FairMOT
+conda create -n FairMOT python=3.8
 conda activate FairMOT
-conda install pytorch==1.7.0 torchvision==0.8.0 cudatoolkit=10.2 -c pytorch
+pip install torch==1.7.1+cu110 torchvision==0.8.2+cu110 -f https://download.pytorch.org/whl/torch_stable.html
 cd ${FAIRMOT_ROOT}
 pip install cython
 pip install -r requirements.txt
