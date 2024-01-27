@@ -1,15 +1,15 @@
 {
-    "root":"/home/shanliang/workspace/dataset/tracking/FairMOT",
+    "root":"/home/shanliang/workspace/dataset/USVTrack/FairMOT",
     "train":
     {
-        "mot20":"/home/shanliang/workspace/dataset/tracking/FairMOT/watersenestracking/train.txt"
+        "mot20":"/home/shanliang/workspace/dataset/USVTrack/FairMOT/train.txt"
     },
     "test_emb":
     {
-        "mot20":"/home/shanliang/workspace/dataset/tracking/FairMOT/waterscenestracking/test.txt"
+        "mot20":"/home/shanliang/workspace/dataset/USVTrack/FairMOT/test.txt"
     },
     "test":
     {
-        "mot20":"/home/shanliang/workspace/dataset/tracking/FairMOT/waterscenestracking/test.txt"
+        "mot20":"/home/shanliang/workspace/dataset/USVTrack/FairMOT/test.txt"
     }
 }

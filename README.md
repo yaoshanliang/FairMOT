@@ -1,3 +1,31 @@
+# Usage for USVTrack
+
+## Installation
+* Clone this repo, and we'll call the directory that you cloned as ${FAIRMOT_ROOT}
+* Install dependencies. We use python 3.8 and pytorch >= 1.7.0, cuda11.8
+```
+conda create -n FairMOT python=3.8
+conda activate FairMOT
+# no test: conda install -y -c pytorch -c conda-forge cudatoolkit=11.1 pytorch torchvision
+pip install torch==1.7.1+cu110 torchvision==0.8.2+cu110 -f https://download.pytorch.org/whl/torch_stable.html
+cd ${FAIRMOT_ROOT}
+pip install cython
+pip install -r requirements.txt
+```
+* We use [DCNv2_pytorch_1.7](https://github.com/ifzhang/DCNv2/tree/pytorch_1.7) in our backbone network (pytorch_1.7 branch). Previous versions can be found in [DCNv2](https://github.com/CharlesShang/DCNv2).
+```
+git clone -b pytorch_1.7 https://github.com/ifzhang/DCNv2.git
+cd DCNv2
+./make.sh
+```
+
+
+## Train
+```
+sh experiments/USVTrack.sh
+```
+
+---
 # FairMOT
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/a-simple-baseline-for-multi-object-tracking/multi-object-tracking-on-2dmot15-1)](https://paperswithcode.com/sota/multi-object-tracking-on-2dmot15-1?p=a-simple-baseline-for-multi-object-tracking)
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/a-simple-baseline-for-multi-object-tracking/multi-object-tracking-on-mot16)](https://paperswithcode.com/sota/multi-object-tracking-on-mot16?p=a-simple-baseline-for-multi-object-tracking)

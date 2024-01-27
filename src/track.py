@@ -266,17 +266,17 @@ if __name__ == '__main__':
     seqs = [seq.strip() for seq in seqs_str.split()]
 
     if opt.val_waterscenestracking:
-        data_root = os.path.join(opt.data_dir, 'waterscenestracking/images/val')
+        data_root = os.path.join(opt.data_dir, 'images/val')
         seqs = os.listdir(data_root)
 
     if opt.test_waterscenestracking:
-        data_root = os.path.join(opt.data_dir, 'waterscenestracking/images/test')
+        data_root = os.path.join(opt.data_dir, 'images/test')
         seqs = os.listdir(data_root)
 
     main(opt,
          data_root=data_root,
          seqs=seqs,
-         exp_name='waterscenestracking_test_public_dla34',
+         exp_name='USVTrack_test_public_dla34',
          show_image=False,
          save_images=False,
          save_videos=False)

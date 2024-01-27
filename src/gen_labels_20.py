@@ -8,16 +8,15 @@ def mkdirs(d):
         os.makedirs(d)
 
 
-seq_root = '/data/tracking/MOTCUSTOM/tracking/test'
-label_root = '/data/tracking/MOTCUSTOM/labels_with_ids/test'
+seq_root = '/data/tracking/MOT/images/train'
+label_root = '/data/tracking/MOT/labels_with_ids/train'
 mkdirs(label_root)
 seqs = sorted([s for s in os.listdir(seq_root)])
 
 tid_curr = 0
 tid_last = -1
 for seq in seqs:
-    # seq_info = open(osp.join(seq_root, seq, 'seqinfo.ini')).read()
-    seq_info = open(osp.join('/data/tracking/MOTCUSTOM/seqinfo_tmp/test', seq, 'seqinfo.ini')).read()
+    seq_info = open(osp.join(seq_root, seq, 'seqinfo.ini')).read()
     seq_width = int(seq_info[seq_info.find('imWidth=') + 8:seq_info.find('\nimHeight')])
     seq_height = int(seq_info[seq_info.find('imHeight=') + 9:seq_info.find('\nimExt')])
 
