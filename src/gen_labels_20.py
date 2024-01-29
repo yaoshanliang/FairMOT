@@ -8,8 +8,8 @@ def mkdirs(d):
         os.makedirs(d)
 
 
-seq_root = '/data/tracking/MOT/images/train'
-label_root = '/data/tracking/MOT/labels_with_ids/train'
+seq_root = '/gpfs/work/cpt/shanliangyao19/dataset/USVTrack/MOT/images/train'
+label_root = '/gpfs/work/cpt/shanliangyao19/dataset/USVTrack/MOT/labels_with_ids/train'
 mkdirs(label_root)
 seqs = sorted([s for s in os.listdir(seq_root)])
 

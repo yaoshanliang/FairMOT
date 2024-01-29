@@ -170,7 +170,7 @@ def main(opt, data_root, det_root=None, seqs=('17',), exp_name='demo',
 
 
 if __name__ == '__main__':
-    os.environ['CUDA_VISIBLE_DEVICES'] = '1'
+    # os.environ['CUDA_VISIBLE_DEVICES'] = '1'
     opt = opts().init()
 
     if not opt.val_mot16:
@@ -265,11 +265,11 @@ if __name__ == '__main__':
 
     seqs = [seq.strip() for seq in seqs_str.split()]
 
-    if opt.val_waterscenestracking:
+    if opt.val_USVTrack:
         data_root = os.path.join(opt.data_dir, 'images/val')
         seqs = os.listdir(data_root)
 
-    if opt.test_waterscenestracking:
+    if opt.test_USVTrack:
         data_root = os.path.join(opt.data_dir, 'images/test')
         seqs = os.listdir(data_root)
 
