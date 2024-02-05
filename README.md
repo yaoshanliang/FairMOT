@@ -19,10 +19,32 @@ cd DCNv2
 ./make.sh
 ```
 
-
-## Train
+## Configuration
 ```
-sh experiments/USVTrack.sh
+src/lib/opts.py
+
+--data_dir path/to/dataset
+--data_cfg 'src/lib/cfg/USVTrack.json'
+--batch_size 16 
+```
+## Data Structure
+
+* FairMOT (all into one class)
+class_id, track_id, x / seq_width, y / seq_height, w / seq_width, h / seq_height
+0 1 0.073958 0.400926 0.147917 0.151852
+
+* MCMOT
+class_id, track_id, bbox_center_x, box_center_y, bbox_width, bbox_height
+1 1 0.073958 0.400926 0.147917 0.151852
+
+## Training
+```
+python src/train.py
+```
+
+## Evaluation
+```
+python src/track.py --load_model exp/mot/USVTrack_dla34_0130/model_299.pth
 ```
 
 ---

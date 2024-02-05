@@ -5,17 +5,22 @@ from __future__ import print_function
 import argparse
 import os
 import sys
+import datetime
 
 class opts(object):
   def __init__(self):
+
+    time_str        = datetime.datetime.strftime(datetime.datetime.now(),'%Y_%m_%d_%H_%M_%S')
+    exp_id = 'USVTrack_' + str(time_str)
+  
     self.parser = argparse.ArgumentParser()
     # basic experiment setting
     self.parser.add_argument('task', default='mot', help='mot')
     self.parser.add_argument('--dataset', default='jde', help='jde')
-    self.parser.add_argument('--exp_id', default='default')
+    self.parser.add_argument('--exp_id', default=exp_id)
     self.parser.add_argument('--test', action='store_true')
-    #self.parser.add_argument('--load_model', default='../models/ctdet_coco_dla_2x.pth',
-                             #help='path to pretrained model')
+    # self.parser.add_argument('--load_model', default='exp/mot/USVTrack_dla34_0130/model_last.pth',
+                            #  help='path to pretrained model')
     self.parser.add_argument('--load_model', default='',
                              help='path to pretrained model')
     self.parser.add_argument('--resume', action='store_true',
@@ -73,7 +78,7 @@ class opts(object):
                              help='learning rate for batch size 12.')
     self.parser.add_argument('--lr_step', type=str, default='20',
                              help='drop learning rate by 10.')
-    self.parser.add_argument('--num_epochs', type=int, default=300,
+    self.parser.add_argument('--num_epochs', type=int, default=500,
                              help='total training epochs.')
     self.parser.add_argument('--batch_size', type=int, default=12,
                              help='batch size')
