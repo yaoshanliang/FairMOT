@@ -9,9 +9,9 @@ def mkdirs(d):
 
 
 # seq_root = '/gpfs/work/cpt/shanliangyao19/dataset/USVTrack/MCMOT/images/train'
-seq_root = '/gpfs/work/cpt/shanliangyao19/dataset/USVTrack/MCMOT/images/test'
+seq_root = '/gpfs/work/cpt/shanliangyao19/dataset/USVTrack/MCMOT/images/train'
 # label_root = '/gpfs/work/cpt/shanliangyao19/dataset/USVTrack/MCMOT/labels_with_ids/train'
-label_root = '/gpfs/work/cpt/shanliangyao19/dataset/USVTrack/MOT/labels_with_ids/test'
+label_root = '/gpfs/work/cpt/shanliangyao19/dataset/USVTrack/MOT/labels_with_ids/train'
 mkdirs(label_root)
 seqs = sorted([s for s in os.listdir(seq_root)])
 
@@ -57,9 +57,9 @@ for seq in seqs:
         # label_str = '0 {:d} {:.6f} {:.6f} {:.6f} {:.6f}\n'.format(
             # tid_curr, x / seq_width, y / seq_height, w / seq_width, h / seq_height)
         
-        # For one classes, all labels to 0
+        # For multiple classes
         label_str = '{:d} {:d} {:.6f} {:.6f} {:.6f} {:.6f}\n'.format(
-            0, tid_curr, x / seq_width, y / seq_height, w / seq_width, h / seq_height)
+            int(label), tid_curr, x / seq_width, y / seq_height, w / seq_width, h / seq_height)
         print(label_str)
         with open(label_fpath, 'a') as f:
             f.write(label_str)

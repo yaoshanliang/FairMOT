@@ -1,5 +1,5 @@
 {
-    "root":"/gpfs/work/cpt/shanliangyao19/dataset/USVTrack/MOT",
+    "root":"/gpfs/work/cpt/shanliangyao19/dataset/USVTrack/MCMOT",
     "train":
     {
         "mot17":"./data/mot17.train",
